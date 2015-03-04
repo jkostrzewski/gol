@@ -23,3 +23,9 @@ class Cell:
 			return '@'
 		else:
 			return ' '
+
+	def __init__(self, is_alive = False):
+		self.is_alive = is_alive
+
+	def copy(self):
+		return Cell(self.is_alive)

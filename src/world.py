@@ -7,7 +7,7 @@ class World:
 	width = 50
 	height = 50
 	world = [[]]
-	seed_ratio = 0.1
+	seed_ratio = 0.5
 	rules = []
 	rules_manager = RulesManager()
 
@@ -26,3 +26,10 @@ class World:
 		self.world = new
 
 
+	def copy(self):
+		w = World()
+		w.initialize()
+		for i in range(self.height):
+			for j in range(self.width):
+				w.world[i][j] = self.world[i][j].copy()
+		return w

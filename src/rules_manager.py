@@ -9,8 +9,8 @@ class RulesManager:
 
 
 	def apply(self, world):
-		new_world = world.world
-		world_fields = copy.deepcopy(world.world)
+		new_world = world.copy().world
+		world_fields = world.copy().world
 		for i in range(world.height):
 			for j in range(world.width):
 
@@ -53,6 +53,6 @@ class RulesManager:
 				except IndexError:
 					result[2]+=1
 					
-		print result, i, j
+		#print result, i, j
 		return result
 
