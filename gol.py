@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 
 from src.world import World
+from src.visualizer import Visualizer
 import time
 
 def main():
 	world = World()
 	world.initialize()
+	vis = Visualizer(world = world)
+	print 'asd'
 	while True:
-		world.draw()
+		print 'asd'
 		world.next_generation()
-		raw_input()
+		vis.update_data(world)  
+
 
 
 if __name__ == '__main__':

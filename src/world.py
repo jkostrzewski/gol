@@ -4,10 +4,10 @@ import os
 import copy
 
 class World:
-	width = 50
-	height = 50
+	width = 200
+	height = 130
 	world = [[]]
-	seed_ratio = 0.5
+	seed_ratio = 0.1
 	rules = []
 	rules_manager = RulesManager()
 
@@ -22,8 +22,8 @@ class World:
 		print('\n'.join([''.join(['{:2}'.format(item) for item in row]) for row in self.world]))
 
 	def next_generation(self):
-		new = copy.deepcopy(self.rules_manager.apply(self))
-		self.world = new
+		self.world = self.rules_manager.apply(self)
+		
 
 
 	def copy(self):
